@@ -1,3 +1,30 @@
+# Tsukiko
+
+运行时下的动态类型检测器，基于 **TypeScript** 开发
+
+## Install
+
+> NPM
+
+```bash
+npm install tsukiko
+```
+
+> YAYN
+
+```bash
+yarn add tsukiko
+```
+
+> PNPM
+
+```bash
+pnpm install tsukiko
+```
+
+## Code
+
+```typescript
 import Tsu from '.';
 
 const schema = Tsu.Tuple([Tsu.Number()]);
@@ -25,3 +52,4 @@ const schema5 = Tsu.Intersection([
 	Tsu.Union([schema, Tsu.Union([Tsu.Number().optional(), schema2])]),
 ]);
 export type Schema5 = Tsu.infer<typeof schema5>;
+```

@@ -23,25 +23,20 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
 	protected isStrict = false;
 
 	protected defaultHandle(input: ObjectParserInfer<S>) {
-		if ('v' in this.valuesParser) console.log(input, this.valuesParser);
-		const result = input;
+		let result = input;
+
+		Object.keys(this.valuesParser).forEach(key => {
+			if (key in result && !(new UndefinedParser().check(result[key]))) return;
+			result = Object.assign(result, { [key]: this.valuesParser[key].parse(undefined) });
+		});
 
 		if (this.isStrict) {
 			Object.keys(result)
 				.filter(key => !Object.keys(this.valuesParser).includes(key))
 				.forEach(key => {
-					if ('v' in this.valuesParser) console.log(key);
-
 					delete result[key];
 				});
 		}
-		Object.keys(this.valuesParser).forEach(key => {
-			if (new UndefinedParser().check(result[key])) {
-				(result as { [propName: string]: unknown })[key] = this.valuesParser[key].parse(undefined);
-			}
-		});
-		if ('v' in this.valuesParser) console.log(result);
-
 		return result;
 	}
 

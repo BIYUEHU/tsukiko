@@ -16,7 +16,7 @@ test('number parser', () => {
 	expect(Tsu.Number().min(1, false).check(1)).toBe(false);
 	expect(Tsu.Number().max(2).min(1).check(1)).toBe(true);
 	expect(Tsu.Number().range(1, 2).check(1)).toBe(true);
-	expect(Tsu.Number().range(1, 2, true, false).check(2)).toBe(true);
+	expect(Tsu.Number().range(1, 2, true, false).check(2)).toBe(false);
 	expect(Tsu.Number().int().check(2)).toBe(true);
 	expect(Tsu.Number().int().check(2.33)).toBe(false);
 });
