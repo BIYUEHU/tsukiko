@@ -1,0 +1,12 @@
+dist
+build
+coverage
+public
+node_modules
+test
+
+.test.ts
+
+**/*.svg
+**/*.sh
+components.d.ts
