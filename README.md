@@ -25,7 +25,7 @@ pnpm install tsukiko
 ## Code
 
 ```typescript
-import Tsu from '.';
+import Tsu from 'tsukiko';
 
 const schema = Tsu.Tuple([Tsu.Number()]);
 export type Schema = Tsu.infer<typeof schema>;
@@ -52,4 +52,18 @@ const schema5 = Tsu.Intersection([
 	Tsu.Union([schema, Tsu.Union([Tsu.Number().optional(), schema2])]),
 ]);
 export type Schema5 = Tsu.infer<typeof schema5>;
+
+const schema6 = Tsu.Object({}).index(
+	Tsu.String().regexp(/[0-9]+\.[0-9]+\.[0-9]+/),
+	Tsu.String().regexp(/kotori-plugin-(.*)/),
+);
+export type Schema6 = Tsu.infer<typeof schema6>;
+export const example6: Schema6 = {
+	'kotori-plugin-adapter-qq': '1.5.0',
+	'kotori-plugin-adapter-wechat': '0.2.0',
+	'kotori-plugin-database-sqlite': '2.1.0',
+	'kotori-plugin-database-mysql': '3.1.0',
+	'kotori-plugin-help': '1.2.0',
+	'kotori-plugin-wiki': '1.0.0',
+};
 ```
