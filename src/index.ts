@@ -3,12 +3,13 @@
  * @Blog: https://hotaru.icu
  * @Date: 2023-11-24 18:43:20
  * @LastEditors: Hotaru biyuehuya@gmail.com
- * @LastEditTime: 2023-11-26 16:56:36
+ * @LastEditTime: 2023-12-01 22:37:24
  */
 import {
 	anyFactory,
 	arrayFactory,
 	booleanFactory,
+	customFactory,
 	intersectionFactory,
 	literalFactory,
 	neverFactory,
@@ -41,6 +42,7 @@ export namespace Tsu {
 	export const Literal = literalFactory;
 	export const Intersection = intersectionFactory;
 	export const Union = unionFactory;
+	export const Custom = customFactory;
 	export type infer<T> = ParserInfer<T>;
 	export type inferObject<T extends ObjectParserConfig> = ObjectParserInfer<T>;
 	export type inferTuple<T extends TupleParserConfig> = TupleParserInfer<T>;

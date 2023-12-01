@@ -29,3 +29,7 @@ export type TupleParserInfer<T extends TupleParserConfig> = {
 };
 
 export type IonParserConfig = [Parser<unknown>, Parser<unknown>];
+
+export interface IndexObject<T = any> {
+	[propName: string]: T;
+}

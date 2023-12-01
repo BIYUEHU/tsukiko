@@ -12,8 +12,8 @@ import {
 	UndefinedParser,
 	UnknownParser,
 } from './parsers';
-import { IonParserConfig, ObjectParserConfig, TupleParserConfig } from './types';
-import { IntersectionParser, LiteralParser, UnionParser } from './utils';
+import { IonParserConfig, ObjectParserConfig, ParserFunction, TupleParserConfig } from './types';
+import { CustomParser, IntersectionParser, LiteralParser, UnionParser } from './utils';
 
 export function numberFactory() {
 	return new NumberParser();
@@ -69,4 +69,8 @@ export function intersectionFactory<T extends IonParserConfig>(values: T) {
 
 export function unionFactory<T extends IonParserConfig>(values: T) {
 	return new UnionParser<T>(values);
+}
+
+export function customFactory<T>(handle: ParserFunction) {
+	return new CustomParser<T>(handle);
 }
