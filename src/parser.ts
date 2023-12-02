@@ -3,7 +3,7 @@ import type { ParserFunction, ParserImpl, ParserSafeReturn } from './types';
 
 export abstract class Parser<T> implements ParserImpl<T> {
 	private defaultHandleBefore(input: T) {
-		return new UndefinedParser().check(input) ? this.defaultValue as T : this.defaultHandle(input);
+		return new UndefinedParser().check(input) ? (this.defaultValue as T) : this.defaultHandle(input);
 	}
 
 	protected abstract rules: ParserFunction[];
@@ -51,7 +51,8 @@ export abstract class Parser<T> implements ParserImpl<T> {
 
 	public default(value: T) {
 		this.defaultValue = value;
-		return this.optional();
+		this.optional();
+		return this;
 	}
 }
 
