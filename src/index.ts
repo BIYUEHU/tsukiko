@@ -3,7 +3,7 @@
  * @Blog: https://hotaru.icu
  * @Date: 2023-11-24 18:43:20
  * @LastEditors: Hotaru biyuehuya@gmail.com
- * @LastEditTime: 2023-12-01 22:37:24
+ * @LastEditTime: 2023-12-02 13:45:52
  */
 import {
 	anyFactory,
@@ -26,6 +26,9 @@ import type { ObjectParserConfig, ObjectParserInfer, ParserInfer, TupleParserCon
 
 export * from './factory';
 export * from './types';
+export * from './utils';
+export * from './parsers';
+export * from './parser';
 
 export namespace Tsu {
 	export const Number = numberFactory;
