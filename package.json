@@ -1,6 +1,6 @@
 {
     "name": "tsukiko",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "description": "Types Check And Parse In The Runtime Base On TypeScript",
     "main": "dist/index.js",
     "scripts": {

@@ -1,9 +1,8 @@
-import { UndefinedParser } from './parsers';
 import type { ParserFunction, ParserImpl, ParserSafeReturn } from './types';
 
 export abstract class Parser<T> implements ParserImpl<T> {
 	private defaultHandleBefore(input: T) {
-		return new UndefinedParser().check(input) ? (this.defaultValue as T) : this.defaultHandle(input);
+		return input === undefined ? (this.defaultValue as T) : this.defaultHandle(input);
 	}
 
 	protected abstract rules: ParserFunction[];
@@ -33,7 +32,7 @@ export abstract class Parser<T> implements ParserImpl<T> {
 	}
 
 	public check(input: unknown): input is T {
-		if (this.isOptional && new UndefinedParser().check(input)) return true;
+		if (this.isOptional && (input === undefined || input === null)) return true;
 		try {
 			this.rules.forEach(rule => {
 				if (!rule(input)) throw new Error();
