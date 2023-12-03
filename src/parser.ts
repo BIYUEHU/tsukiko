@@ -2,7 +2,7 @@ import type { ParserFunction, ParserImpl, ParserSafeReturn } from './types';
 
 export abstract class Parser<T> implements ParserImpl<T> {
 	private defaultHandleBefore(input: T) {
-		return input === undefined ? (this.defaultValue as T) : this.defaultHandle(input);
+		return input === undefined || input === null ? (this.defaultValue as T) : this.defaultHandle(input);
 	}
 
 	protected abstract rules: ParserFunction[];
