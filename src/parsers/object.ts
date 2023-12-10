@@ -1,42 +1,60 @@
 import type { ObjectParserInfer, ObjectParserConfig, ParserFunction, IndexObject, ParserInfer } from '../types';
 import Parser from '../parser';
-import { StringParser, UndefinedParser } from '.';
+import { StringParser } from './string';
+import TsuError from '../utils/error';
 
 export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectParserInfer<S>> {
 	protected rules: ParserFunction[] = [
 		input => {
-			if (input === null) return false;
-			if (typeof input !== 'object') return false;
-			if (Array.isArray(input)) return false;
-			if (this.isStrict && Object.keys(input).length > Object.keys(this.valuesParser).length) return false;
+			if (input === null) return this.error('object_is_null');
+			if (typeof input !== 'object') return this.error('not_an_object');
+			if (Array.isArray(input)) return this.error('object_is_an_array');
+			const expectedLength = Object.keys(this.valuesParser).length;
+			const realityLength = Object.keys(input).length;
+			if (this.isStrict && realityLength > expectedLength)
+				return this.error('object_keys_too_many', { value: expectedLength, input: realityLength });
+			let key: string = '';
 			try {
 				if (this.isStrict || !this.indexValueParser) {
 					Object.entries(this.valuesParser).forEach(array => {
-						if (!array[1].check(input[array[0] as keyof typeof input])) throw new Error();
+						const { 0: index } = array;
+						key = index;
+						array[1].parse(input[array[0] as keyof typeof input]);
 					});
-					return true;
+					return null;
 				}
+				/* index mode */
 				Object.keys(input)
 					.filter(key => !Object.keys(this.valuesParser).includes(key))
-					.forEach(key => {
-						if (!this.indexKeyParser.check(key)) throw new Error();
-						if (!this.indexValueParser?.check(input[key as keyof typeof input])) throw new Error();
+					.forEach(el => {
+						if (!this.indexKeyParser.check(el)) throw this.error('object_key_error');
+						key = el;
+						this.indexValueParser?.parse(input[el as keyof typeof input]);
 					});
-			} catch {
-				return false;
+			} catch (error) {
+				if (!(error instanceof TsuError)) throw error;
+				return this.error('object_error', { key, value: error.message });
 			}
-			return true;
+			return null;
 		},
 	];
 
 	protected isStrict = false;
 
 	protected defaultHandle(input: ObjectParserInfer<S>) {
-		let result = input;
+		const result = input as { [propName: string]: unknown };
 
 		Object.keys(this.valuesParser).forEach(key => {
-			if (key in result && !new UndefinedParser().check(result[key])) return;
-			result = Object.assign(result, { [key]: this.valuesParser[key].parse(undefined) });
+			if (
+				this.valuesParser[key] instanceof ObjectParser &&
+				typeof result[key] === 'object' &&
+				!Array.isArray(result[key])
+			) {
+				result[key] = this.valuesParser[key].parse(result[key]);
+				return;
+			}
+			if (key in input && result[key] !== undefined && result[key] !== null) return;
+			result[key] = this.valuesParser[key].parse(undefined);
 		});
 
 		if (this.isStrict) {
@@ -46,7 +64,7 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
 					delete result[key];
 				});
 		}
-		return result;
+		return result as ObjectParserInfer<S>;
 	}
 
 	private valuesParser: S;
@@ -56,8 +74,8 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
 		this.valuesParser = types;
 	}
 
-	public strict() {
-		this.isStrict = true;
+	public strict(isStrict: boolean = true) {
+		this.isStrict = isStrict;
 		return this;
 	}
 
@@ -69,7 +87,7 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
 		value: T,
 		key: StringParser = new StringParser(),
 	): Parser<IndexObject<ParserInfer<T>>> {
-		this.isStrict = false;
+		this.strict(false);
 		this.indexValueParser = value;
 		this.indexKeyParser = key;
 		return this as unknown as Parser<IndexObject<ParserInfer<T>>>;

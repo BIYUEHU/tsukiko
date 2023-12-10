@@ -1,7 +1,7 @@
 import Tsu from '../src';
 
 test('object parser', () => {
-	expect(Tsu.Object().check([])).toBe(false);
+	expect(Tsu.Object({}).check([])).toBe(false);
 	expect(Tsu.Object({}).check({})).toBe(true);
 	expect(Tsu.Object({}).check(1)).toBe(false);
 	expect(Tsu.Object({}).check('2')).toBe(false);

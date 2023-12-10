@@ -1,19 +1,23 @@
 import type { ParserInfer, ParserFunction } from '../types';
-import { NeverParser } from '.';
+import { NeverParser } from './never';
 import { Parser } from '../parser';
+import TsuError from '../utils/error';
 
 export class ArrayParser<S extends Parser<unknown> = NeverParser> extends Parser<ParserInfer<S>[]> {
-	protected rules: ParserFunction<boolean>[] = [
+	protected rules: ParserFunction[] = [
 		input => {
-			if (!Array.isArray(input)) return false;
+			if (!Array.isArray(input)) return this.error('not_an_array');
+			let count = 0;
 			try {
 				input.forEach(element => {
-					if (!this.elementParser.check(element)) throw new Error();
+					this.elementParser.parse(element);
+					count += 1;
 				});
-			} catch {
-				return false;
+			} catch (error) {
+				if (!(error instanceof TsuError)) throw error;
+				return this.error('array_error', { length: count, value: error.message });
 			}
-			return true;
+			return null;
 		},
 	];
 

@@ -13,7 +13,7 @@ import {
 	UnknownParser,
 } from './parsers';
 import { IonParserConfig, ObjectParserConfig, ParserFunction, TupleParserConfig } from './types';
-import { CustomParser, IntersectionParser, LiteralParser, UnionParser } from './utils';
+import { CustomParser, IntersectionParser, LiteralParser, UnionParser } from './parsers/advance';
 
 export function numberFactory() {
 	return new NumberParser();
@@ -47,15 +47,15 @@ export function neverFactory() {
 	return new NeverParser();
 }
 
-export function arrayFactory<T extends Parser<unknown> = NeverParser>(types?: T) {
-	return new ArrayParser<T>(types ?? (neverFactory() as unknown as T));
+export function arrayFactory<T extends Parser<unknown>>(types: T) {
+	return new ArrayParser<T>(types);
 }
 
-export function tupleFactory<T extends TupleParserConfig>(types: T = [] as never as T) {
+export function tupleFactory<T extends TupleParserConfig>(types: T) {
 	return new TupleParser<T>(types);
 }
 
-export function objectFactory<T extends ObjectParserConfig>(types: T = {} as T) {
+export function objectFactory<T extends ObjectParserConfig>(types: T) {
 	return new ObjectParser<T>(types);
 }
 
@@ -71,6 +71,6 @@ export function unionFactory<T extends IonParserConfig>(values: T) {
 	return new UnionParser<T>(values);
 }
 
-export function customFactory<T>(handle: ParserFunction) {
+export function customFactory<T>(handle: ParserFunction<boolean>) {
 	return new CustomParser<T>(handle);
 }

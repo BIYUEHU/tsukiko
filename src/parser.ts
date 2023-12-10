@@ -1,46 +1,64 @@
-import type { ParserFunction, ParserImpl, ParserSafeReturn } from './types';
+import type { Langs, ParserFunction, ParserImpl, ParserSafeReturn } from './types';
+import TsuError from './utils/error';
+import Lang from './utils/lang';
 
-export abstract class Parser<T> implements ParserImpl<T> {
-	private defaultHandleBefore(input: T) {
-		return input === undefined || input === null ? (this.defaultValue as T) : this.defaultHandle(input);
+export abstract class Parser<T> extends Lang implements ParserImpl<T> {
+	private testInput(input: unknown): ReturnType<ParserFunction> {
+		if (this.isOptional && (input === undefined || (!this.onlyEmpty && input === null))) return null;
+		try {
+			this.rules.forEach(rule => {
+				const result = rule(input);
+				if (!result) return;
+				throw result;
+			});
+		} catch (error) {
+			if (!(error instanceof TsuError)) throw error;
+			return error;
+		}
+		return null;
+	}
+
+	private defaultHandleBefore(input: T): T {
+		const isEmpty = input === undefined || (!this.onlyEmpty && input === null);
+		if (isEmpty && !this.defaultHandle && !this.isOptional) return undefined as T;
+		return this.defaultHandle(isEmpty && this.defaultValue ? (this.defaultValue as T) : input);
 	}
 
 	protected abstract rules: ParserFunction[];
 
-	protected defaultHandle(input: T) {
+	protected defaultHandle(input: T): T {
 		JSON.stringify(this);
 		return input;
 	}
 
-	private defaultValue?: T;
+	protected error(lang: Langs, data?: { [propName: string]: string | number }) {
+		JSON.stringify(this);
+		return new TsuError(this.langType, lang, data);
+	}
 
 	private isOptional = false;
 
+	private onlyEmpty = false;
+
+	protected defaultValue?: T;
+
 	public parse(input: unknown): T {
-		if (this.check(input)) {
-			return this.defaultHandleBefore(input);
-		}
-		throw new Error();
+		const result = this.testInput(input);
+		if (!result) return this.defaultHandleBefore(input as T);
+		throw result;
 	}
 
 	public parseSafe(input: unknown): ParserSafeReturn<T> {
 		try {
 			return { value: true, data: this.parse(input) };
-		} catch (error: unknown) {
-			return { value: false, error: error instanceof Error ? error : new Error() };
+		} catch (error) {
+			if (!(error instanceof TsuError)) throw error;
+			return { value: false, error };
 		}
 	}
 
 	public check(input: unknown): input is T {
-		if (this.isOptional && (input === undefined || input === null)) return true;
-		try {
-			this.rules.forEach(rule => {
-				if (!rule(input)) throw new Error();
-			});
-		} catch {
-			return false;
-		}
-		return true;
+		return !this.testInput(input);
 	}
 
 	public optional(): Parser<T | undefined> {
@@ -51,6 +69,11 @@ export abstract class Parser<T> implements ParserImpl<T> {
 	public default(value: T) {
 		this.defaultValue = value;
 		this.optional();
+		return this;
+	}
+
+	public empty() {
+		this.onlyEmpty = true;
 		return this;
 	}
 }

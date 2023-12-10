@@ -1,21 +1,24 @@
 import type { TupleParserInfer, ParserFunction, TupleParserConfig } from '../types';
 import { Parser } from '../parser';
+import TsuError from '../utils/error';
 
 export class TupleParser<S extends TupleParserConfig> extends Parser<TupleParserInfer<S>> {
-	protected rules: ParserFunction<boolean>[] = [
+	protected rules: ParserFunction[] = [
 		input => {
-			if (!Array.isArray(input)) return false;
-			if (input.length !== this.elementsParser.length) return false;
+			if (!Array.isArray(input)) return this.error('not_a_tuple');
+			if (input.length !== this.elementsParser.length)
+				return this.error('illegal_tuple_length', { value: this.elementsParser.length, input: input.length });
+			let count = 0;
 			try {
-				let count = 0;
 				input.forEach(element => {
-					if (!this.elementsParser[count].check(element)) throw new Error();
+					this.elementsParser[count].parse(element);
 					count += 1;
 				});
-			} catch {
-				return false;
+			} catch (error) {
+				if (!(error instanceof TsuError)) throw error;
+				return this.error('tuple_error', { length: count, value: error.message });
 			}
-			return true;
+			return null;
 		},
 	];
 

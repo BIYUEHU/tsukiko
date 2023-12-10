@@ -1,4 +1,4 @@
-import Tsu from '.';
+import Tsu, { tsuFactory } from './src';
 
 const schema = Tsu.Tuple([Tsu.Number()]);
 export type Schema = Tsu.infer<typeof schema>;
@@ -30,6 +30,7 @@ const schema6 = Tsu.Object({}).index(
 	Tsu.String().regexp(/[0-9]+\.[0-9]+\.[0-9]+/),
 	Tsu.String().regexp(/kotori-plugin-(.*)/),
 );
+
 export type Schema6 = Tsu.infer<typeof schema6>;
 export const example6: Schema6 = {
 	'kotori-plugin-adapter-qq': '1.5.0',
@@ -39,3 +40,38 @@ export const example6: Schema6 = {
 	'kotori-plugin-help': '1.2.0',
 	'kotori-plugin-wiki': '1.0.0',
 };
+
+const newTsu = tsuFactory('ja_JP');
+
+export const localeTypeSchema = newTsu.Union([
+	newTsu.Union([newTsu.Literal('en_US'), newTsu.Literal('ja_JP')]),
+	newTsu.Union([newTsu.Literal('zh_CN'), newTsu.Literal('zh_TW')]),
+]);
+
+const globalConfigBaseSchema = newTsu.Object({
+	lang: localeTypeSchema.default('ja_JP'),
+	'command-prefix': newTsu.String().default('/'),
+});
+
+const adapterConfigBaseSchema = newTsu.Intersection([
+	newTsu.Object({
+		extends: newTsu.String(),
+		master: newTsu.Union([newTsu.Number(), newTsu.String()]),
+	}),
+	globalConfigBaseSchema,
+]);
+
+export const globalConfigSchema = newTsu.Object({
+	global: globalConfigBaseSchema,
+	adapter: newTsu.Object({}).index(adapterConfigBaseSchema).default({}),
+	plugin: newTsu.Object({}).index(newTsu.Unknown()).default({}),
+});
+
+export type GlobalConfig = Tsu.infer<typeof globalConfigSchema>;
+
+console.log(
+	globalConfigSchema.parse({
+		global: { lang: 'zh_CN' },
+		adapter: { aa: { master: '1', lang: 'ja_JP' } },
+	}),
+);
