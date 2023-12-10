@@ -20,7 +20,7 @@ export abstract class Parser<T> extends Lang implements ParserImpl<T> {
 
 	private defaultHandleBefore(input: T): T {
 		const isEmpty = input === undefined || (!this.onlyEmpty && input === null);
-		if (isEmpty && !this.defaultHandle && !this.isOptional) return undefined as T;
+		if (isEmpty && !this.defaultValue && !this.isOptional) return undefined as T;
 		return this.defaultHandle(isEmpty && this.defaultValue ? (this.defaultValue as T) : input);
 	}
 
