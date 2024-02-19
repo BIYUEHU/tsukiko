@@ -1,4 +1,4 @@
-import Tsu, { tsuFactory } from './src';
+import Tsu, { tsuFactory } from '../src';
 
 const schema = Tsu.Tuple([Tsu.Number()]);
 export type Schema = Tsu.infer<typeof schema>;

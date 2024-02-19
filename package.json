@@ -1,12 +1,13 @@
 {
   "name": "tsukiko",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Dynamic Types Cheker At Runtime Which Develop Base On **TypeScript**",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "release": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "keywords": [
     "typescript",
@@ -20,24 +21,22 @@
   "author": "Hotaru <biyuehuya@gmail.com>",
   "license": "GPL-3.0",
   "files": [
-    "/dist",
+    "dist",
     "package.json",
     "LICENSE",
     "README.md"
   ],
+  "dependencies": {
+    "@kotori-bot/i18n": "^1.2.0"
+  },
   "devDependencies": {
-    "@commitlint/cli": "12.1.4",
-    "@commitlint/config-conventional": "^17.7.0",
     "@types/jest": "^29.5.10",
     "@types/node": "^20.9.2",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
-    "@typescript-eslint/parser": "^6.4.0",
+    "conventional-changelog-cli": "^4.1.0",
     "eslint": "^8.47.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.28.0",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-config-typescript": "^3.0.0",
     "jest": "^29.7.0",
     "prettier": "^3.0.2",
     "ts-jest": "^29.1.1",

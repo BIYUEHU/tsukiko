@@ -4,12 +4,11 @@
         "moduleResolution": "NodeNext",
         "target": "ESNext",
         "strict": true,
-        /* "jsx": "preserve",
-        "jsxFactory": "DOMcreateElement",
-        "jsxFragmentFactory": "DOMcreateFragment",*/
-        "outDir": "dist",
         "declaration": true,
-        //  "experimentalDecorators": true,
+        "experimentalDecorators": true,
+        "composite": true,
+        "incremental": true,
+        "outDir": "dist",
     },
     "include": [
         "src/**/*"

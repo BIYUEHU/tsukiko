@@ -1,0 +1,12 @@
+## 1.2.2 (2024-02-19)
+
+
+### Features
+
+* custom parser and string pre regexp and object index key ([bf7d990](https://github.com/BIYUEHU/tsukiko/commit/bf7d9901094857a69b2f3f84c23839bb7be4c3f2))
+* first commit ([33cc4d6](https://github.com/BIYUEHU/tsukiko/commit/33cc4d666193c462c1eb5d85e4bb63c93dbe899d))
+* i18n and better parse behavior ([1753432](https://github.com/BIYUEHU/tsukiko/commit/1753432df69700f6da8b6df910f28f884a59177f))
+* update exports ([64be5b6](https://github.com/BIYUEHU/tsukiko/commit/64be5b65f9c48683ea924377d22168e82de1d777))
+
+
+

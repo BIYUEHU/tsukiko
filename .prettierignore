@@ -1,9 +1,0 @@
-dist
-build
-coverage
-public
-node_modules
-
-**/*.svg
-**/*.sh
-components.d.ts
