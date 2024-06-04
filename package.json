@@ -1,7 +1,7 @@
 {
   "name": "tsukiko",
   "version": "1.2.2",
-  "description": "Dynamic Types Cheker At Runtime Which Develop Base On **TypeScript**",
+  "description": "Dynamic Types Cheker At Runtime Which Develop",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
