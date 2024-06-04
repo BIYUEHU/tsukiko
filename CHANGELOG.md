@@ -1,4 +1,13 @@
-## 1.2.2 (2024-02-19)
+## [1.2.3](https://github.com/BIYUEHU/tsukiko/compare/v1.2.2...v1.2.3) (2024-06-04)
+
+
+### Features
+
+* string, number which match and strict mode ([b815f91](https://github.com/BIYUEHU/tsukiko/commit/b815f91e38761780b40f949af3cb5d185dd99a02))
+
+
+
+## [1.2.2](https://github.com/BIYUEHU/tsukiko/compare/v1.1.2...v1.2.2) (2024-02-19)
 
 
 ### Features
