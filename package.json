@@ -4,7 +4,7 @@
   "description": "Dynamic Types Cheker At Runtime Which Develop",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist && tsc && rm -rf tsconfig.tsbuildinfo",
     "test": "jest",
     "coverage": "jest --coverage",
     "release": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
