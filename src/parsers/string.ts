@@ -9,7 +9,7 @@ const MATCH_URL = /^http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w-./?%&=]*)?$/;
 export class StringParser extends Parser<string> {
   private isStrict: boolean = false;
 
-  protected defaultHandle(input: string | number) {
+  protected defaultHandle(input: string) {
     this.defaultHandle.toString();
     return String(input);
   }
