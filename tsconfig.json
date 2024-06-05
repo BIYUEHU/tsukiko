@@ -1,20 +1,15 @@
 {
-    "compilerOptions": {
-        "module": "NodeNext",
-        "moduleResolution": "NodeNext",
-        "target": "ESNext",
-        "strict": true,
-        "declaration": true,
-        "experimentalDecorators": true,
-        "composite": true,
-        "incremental": true,
-        "outDir": "dist",
-    },
-    "include": [
-        "src/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "*.test.ts"
-    ]
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ESNext",
+    "strict": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "composite": true,
+    "incremental": true,
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "exclude": ["node_modules", "example", "dist", "test", "jest.config.ts"]
 }
