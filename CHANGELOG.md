@@ -1,3 +1,12 @@
+## [1.2.4](https://github.com/BIYUEHU/tsukiko/compare/v1.2.3...v1.2.4) (2024-06-05)
+
+
+### Bug Fixes
+
+* tsc pack config ([eed58bf](https://github.com/BIYUEHU/tsukiko/commit/eed58bfc9a8b230d1012350f4cfe2ab47cba0f33))
+
+
+
 ## [1.2.3](https://github.com/BIYUEHU/tsukiko/compare/v1.2.2...v1.2.3) (2024-06-04)
 
 
