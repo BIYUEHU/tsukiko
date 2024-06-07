@@ -1,6 +1,6 @@
 {
   "name": "tsukiko",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Dynamic Types Cheker At Runtime Which Develop",
   "main": "dist/index.js",
   "scripts": {
@@ -43,5 +43,12 @@
     "ts-loader": "^9.4.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.3"
+  },
+  "bugs": {
+    "url": "https://github.com/biyuehu/tsukiko/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biyuehu/tsukiko.git"
   }
 }
