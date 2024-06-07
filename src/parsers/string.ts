@@ -31,7 +31,7 @@ export class StringParser extends Parser<string> {
         ? null
         : this.error(lang, {
             input: input as string,
-            content: `${match}`.substring(1, `${match}`.length - 1)
+            value: `${match}`.substring(1, `${match}`.length - 1)
           })
     );
     return this;
