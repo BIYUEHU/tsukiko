@@ -1,4 +1,4 @@
-import type { ObjectParserInfer, ObjectParserConfig, ParserFunction, ParserInfer } from '../types';
+import type { ObjectParserInfer, ObjectParserConfig, ParserFunction, ParserInfer, Constructor } from '../types';
 import Parser from '../parser';
 import { StringParser } from './string';
 import TsuError from '../utils/error';
@@ -9,6 +9,8 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
       if (input === null) return this.error('object_is_null');
       if (typeof input !== 'object') return this.error('not_an_object');
       if (Array.isArray(input)) return this.error('object_is_an_array');
+      if (this.constructors.filter((constructor) => input instanceof constructor).length !== this.constructors.length)
+        return this.error('object_not_instance_of_constructor');
       const expectedLength = Object.keys(this.valuesParser).length;
       const realityLength = Object.keys(input).length;
       if (this.isStrict && realityLength > expectedLength)
@@ -69,6 +71,8 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
 
   private valuesParser: S;
 
+  private constructors: Constructor[] = [];
+
   public constructor(types: S) {
     super();
     this.valuesParser = types;
@@ -91,6 +95,11 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
     this.indexValueParser = value;
     this.indexKeyParser = key;
     return this as unknown as Parser<Record<string, ParserInfer<T>>>;
+  }
+
+  public instance(constructor: Constructor) {
+    this.constructors.push(constructor);
+    return this;
   }
 }
 

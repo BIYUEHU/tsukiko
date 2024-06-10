@@ -10,6 +10,7 @@ export class StringParser extends Parser<string> {
   private isStrict: boolean = false;
 
   protected defaultHandle(input: string) {
+    super.defaultHandle(input);
     this.defaultHandle.toString();
     return String(input);
   }

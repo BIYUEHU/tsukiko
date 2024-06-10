@@ -48,6 +48,7 @@ pnpm install tsukiko
 - ArrayParser
 - TupleParser
 - ObjectParser
+- EnumParser
 - LiteralParser
 - IntersectionParser
 - UnionParser

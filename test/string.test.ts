@@ -28,4 +28,5 @@ test('string parser', () => {
   expect(Tsu.String().check(123)).toBe(true);
   expect(Tsu.String().strict().check(123)).toBe(false);
   expect(Tsu.String().parse(123)).toBe('123');
+  expect(Tsu.String().optional().parse(null)).toBe(undefined);
 });

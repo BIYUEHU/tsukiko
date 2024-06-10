@@ -20,7 +20,7 @@ export abstract class Parser<T> extends Lang implements ParserImpl<T> {
 
   private defaultHandleBefore(input: T): T {
     const isEmpty = input === undefined || (!this.onlyEmpty && input === null);
-    if (isEmpty && !this.defaultValue && !this.isOptional) return undefined as T;
+    if (isEmpty && !this.defaultValue /* && !this.isOptional */) return undefined as T;
     return this.defaultHandle(isEmpty && this.defaultValue ? (this.defaultValue as T) : input);
   }
 
@@ -38,6 +38,7 @@ export abstract class Parser<T> extends Lang implements ParserImpl<T> {
 
   private isOptional = false;
 
+  /* Allow undefined but not null */
   private onlyEmpty = false;
 
   protected defaultValue?: T;
@@ -55,6 +56,14 @@ export abstract class Parser<T> extends Lang implements ParserImpl<T> {
       if (!(error instanceof TsuError)) throw error;
       return { value: false, error };
     }
+  }
+
+  public parseAsync(input: unknown) {
+    return new Promise((resolve, reject) => {
+      const result = this.parseSafe(input);
+      if (result.value) resolve(result.data);
+      else reject(result.error);
+    });
   }
 
   public check(input: unknown): input is T {

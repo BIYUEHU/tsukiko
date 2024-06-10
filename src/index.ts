@@ -3,13 +3,16 @@
  * @Blog: https://hotaru.icu
  * @Date: 2023-11-24 18:43:20
  * @LastEditors: Hotaru biyuehuya@gmail.com
- * @LastEditTime: 2023-12-10 15:38:50
+ * @LastEditTime: 2024-06-10 18:41:03
  */
 import {
   anyFactory,
   arrayFactory,
   booleanFactory,
+  classFactory,
   customFactory,
+  enumFactory,
+  functionFactory,
   intersectionFactory,
   literalFactory,
   neverFactory,
@@ -32,10 +35,11 @@ import type {
   ParserFunction
 } from './types';
 import { DEFAULT_LANG } from './utils/lang';
+import { Constructor, IonParserConfig } from './types';
+import { Parser } from './parser';
 
 export * from './factory';
 export * from './types';
-export * from './parsers/advance';
 export * from './parsers';
 export * from './parser';
 export * from './utils/error';
@@ -56,7 +60,10 @@ export namespace Tsu {
   export const Literal = literalFactory;
   export const Intersection = intersectionFactory;
   export const Union = unionFactory;
+  export const Enum = enumFactory;
   export const Custom = customFactory;
+  export const Function = functionFactory;
+  export const Class = classFactory;
   export type infer<T> = ParserInfer<T>;
   export type inferObject<T extends ObjectParserConfig> = ObjectParserInfer<T>;
   export type inferTuple<T extends TupleParserConfig> = TupleParserInfer<T>;
@@ -100,14 +107,23 @@ export function tsuFactory(lang: langType = DEFAULT_LANG): typeof Tsu {
     Literal(value) {
       return Tsu.Literal(value).lang(lang);
     },
-    Intersection(values) {
-      return Tsu.Intersection(values).lang(lang);
+    Intersection<T extends IonParserConfig>(...values: T) {
+      return Tsu.Intersection<T>(...values).lang(lang);
     },
-    Union(value) {
-      return Tsu.Union(value).lang(lang);
+    Union<T extends IonParserConfig>(...value: T) {
+      return Tsu.Union<T>(...value).lang(lang);
+    },
+    Enum<T extends Parser<string | number>[]>(...values: T) {
+      return Tsu.Enum(...values).lang(lang);
     },
     Custom<T>(handle: ParserFunction<boolean>) {
       return Tsu.Custom<T>(handle).lang(lang);
+    },
+    Function<T extends (...args: unknown[]) => unknown = (...args: unknown[]) => unknown>() {
+      return functionFactory<T>().lang(lang);
+    },
+    Class<T extends Constructor = Constructor>() {
+      return classFactory<T>();
     }
   };
 }
