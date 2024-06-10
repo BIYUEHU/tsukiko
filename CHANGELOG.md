@@ -1,3 +1,12 @@
+# [1.3.0](https://github.com/biyuehu/tsukiko/compare/v1.2.6...v1.3.0) (2024-06-10)
+
+
+### Features
+
+* function, class, enum parser and parseAsync() ([717b489](https://github.com/biyuehu/tsukiko/commit/717b489dec13c004aa49a4e2347f6a53ff7eb241))
+
+
+
 ## [1.2.6](https://github.com/biyuehu/tsukiko/compare/v1.2.5...v1.2.6) (2024-06-07)
 
 
