@@ -46,10 +46,9 @@ export default {
   object_error: '目標 object 在 %key% 處發生錯誤：%value%',
   object_key_error: '目標 object 鍵類型錯誤',
   /* advance - intersection */
-  intersection_error_first: '交叉類型的第一個類型發生錯誤：%value%',
-  intersection_error_second: '交叉類型的第二個類型發生錯誤：%value%',
+  intersection_error: '交叉類型發生錯誤',
   /* advance - union */
-  union_error: '聯合類型發生錯誤：%value1% ， %value2%',
+  union_error: '聯合類型發生錯誤',
   /* advance - literal */
   literal_only: '字面量類型僅允許 string 與 number',
   literal_number_error: '目標 number 不能賦給 %value%',

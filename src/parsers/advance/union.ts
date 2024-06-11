@@ -11,10 +11,8 @@ export class UnionParser<T extends IonParserConfig> extends Parser<ParserInfer<T
     super();
     this.values = values;
     this.rules.push((input) => {
-      const result1 = this.values[0].parseSafe(input);
-      const result2 = this.values[1].parseSafe(input);
-      if (result1.value || result2.value) return null;
-      throw this.error('union_error', { value1: result1.error.message, value2: result2.error.message });
+      if (values.filter((parser) => parser.check(input)).length >= 1) return null;
+      throw this.error('union_error');
     });
   }
 

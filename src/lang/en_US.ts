@@ -46,10 +46,9 @@ export default {
   object_error: 'Target object error at %key%: %value%',
   object_key_error: 'Target object key type error',
   /* advance - intersection */
-  intersection_error_first: 'Intersection type first error: %value%',
-  intersection_error_second: 'Intersection type second error: %value%',
+  intersection_error: 'Intersection type error',
   /* advance - union */
-  union_error: 'Union type error: %value1%, %value2%',
+  union_error: 'Union type error',
   /* advance - literal */
   literal_only: 'Literal types allow only strings and numbers',
   literal_number_error: 'Target number cannot assign to %value%',

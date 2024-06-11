@@ -46,10 +46,9 @@ export default {
   object_error: '目标 object 在 %key% 处发生错误：%value%',
   object_key_error: '目标 object 键类型错误',
   /* advance - intersection */
-  intersection_error_first: '交叉类型的第一个类型发生错误：%value%',
-  intersection_error_second: '交叉类型的第二个类型发生错误：%value%',
+  intersection_error: '交叉类型发生错误',
   /* advance - union */
-  union_error: '联合类型发生错误：%value1% ， %value2%',
+  union_error: '联合类型发生错误',
   /* advance - literal */
   literal_only: '字面量类型仅允许 string 与 number',
   literal_number_error: '目标 number 不能赋给 %value%',

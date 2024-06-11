@@ -47,10 +47,9 @@ export default {
   object_error: '%key% でエラーが発生しました: %value%',
   object_key_error: '対象のオブジェクトのキーの型が間違っています',
   /* advance - intersection */
-  intersection_error_first: '交差型の最初の型でエラーが発生しました: %value%',
-  intersection_error_second: '交差型の2番目の型でエラーが発生しました: %value%',
+  intersection_error: '交差型でエラーが発生しました',
   /* advance - union */
-  union_error: '合併型でエラーが発生しました: %value1%, %value2%',
+  union_error: '合併型でエラーが発生しました',
   /* advance - literal */
   literal_only: 'リテラル型は文字列と数値のみ許可されます',
   literal_number_error: '対象の数値を %value% に代入できません',
