@@ -1,3 +1,12 @@
+## [1.3.1](https://github.com/biyuehu/tsukiko/compare/v1.3.0...v1.3.1) (2024-06-11)
+
+
+### Bug Fixes
+
+* intersection and union parse error ([af6506c](https://github.com/biyuehu/tsukiko/commit/af6506c93f4ba4ea0827b86ff361c66c5be1926c))
+
+
+
 # [1.3.0](https://github.com/biyuehu/tsukiko/compare/v1.2.6...v1.3.0) (2024-06-10)
 
 
