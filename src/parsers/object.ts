@@ -11,6 +11,10 @@ import { StringParser } from './string'
 import TsuError from '../utils/error'
 import { getSchemaMeta } from '../utils/schema'
 
+/**
+ * Represents a parser for object values with configurable validation options.
+ * @template S - The object parser configuration type.
+ */
 export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectParserInfer<S>> {
   private maxProperties = Number.POSITIVE_INFINITY
 
@@ -91,6 +95,10 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
 
   private constructors: Constructor[] = []
 
+  /**
+   * Creates a new instance of ObjectParser.
+   * @param types - The configuration for the object parser.
+   */
   public constructor(types: S) {
     super()
     const items: Record<string, SchemaMetadata> = {}
@@ -99,6 +107,11 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
     this.valuesParser = types
   }
 
+  /**
+   * Sets whether the parser should be strict in its object property checking.
+   * @param isStrict - Whether to enable strict mode. Defaults to true.
+   * @returns The current ObjectParser instance.
+   */
   public strict(isStrict = true) {
     this.setMeta({ additionalProperties: !isStrict })
     this.isStrict = isStrict
@@ -109,6 +122,12 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
 
   private indexKeyParser: StringParser = new StringParser()
 
+  /**
+   * Configures the parser to handle additional properties with a specified value parser and key parser.
+   * @param value - The parser for additional property values.
+   * @param key - The parser for additional property keys. Defaults to a new StringParser instance.
+   * @returns A new Parser instance for the indexed object.
+   */
   public index<T extends Parser<unknown>>(
     value: T,
     key: StringParser = new StringParser()
@@ -119,23 +138,44 @@ export class ObjectParser<S extends ObjectParserConfig> extends Parser<ObjectPar
     return this as unknown as Parser<Record<string, ParserInfer<T>>>
   }
 
+  /**
+   * Adds a constructor to the list of allowed instance types.
+   * @param Constructor - The constructor function to add.
+   * @returns The current ObjectParser instance.
+   */
   public instance(Constructor: Constructor) {
     this.constructors.push(Constructor)
     return this
   }
 
+  /**
+   * Sets the maximum number of properties allowed in the object.
+   * @param value - The maximum number of properties.
+   * @returns The current ObjectParser instance.
+   */
   public max(value: number) {
     this.setMeta({ maxProperties: value })
     this.maxProperties = value
     return this
   }
 
+  /**
+   * Sets the minimum number of properties required in the object.
+   * @param value - The minimum number of properties.
+   * @returns The current ObjectParser instance.
+   */
   public min(value: number) {
     this.setMeta({ minProperties: value })
     this.minProperties = value
     return this
   }
 
+  /**
+   * Sets both the minimum and maximum number of properties allowed in the object.
+   * @param min - The minimum number of properties.
+   * @param max - The maximum number of properties.
+   * @returns The current ObjectParser instance.
+   */
   public range(min: number, max: number) {
     return this.min(min).max(max)
   }

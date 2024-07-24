@@ -1,5 +1,8 @@
-import AnyParser from './any';
+import AnyParser from './any'
 
-export class UnknownParser extends AnyParser<unknown> { }
+/**
+ * Parser for unknown values.
+ */
+export class UnknownParser extends AnyParser<unknown> {}
 
-export default UnknownParser;
+export default UnknownParser

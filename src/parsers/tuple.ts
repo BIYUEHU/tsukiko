@@ -3,6 +3,10 @@ import { Parser } from '../parser'
 import TsuError from '../utils/error'
 import { getSchemaMeta } from '../utils/schema'
 
+/**
+ * Represents a parser for tuples with a specific configuration.
+ * @template S - The tuple parser configuration type.
+ */
 export class TupleParser<S extends TupleParserConfig> extends Parser<TupleParserInfer<S>> {
   protected rules: ParserFunction[] = [
     (input) => {
@@ -25,6 +29,10 @@ export class TupleParser<S extends TupleParserConfig> extends Parser<TupleParser
 
   private elementsParser: S
 
+  /**
+   * Creates a new instance of TupleParser.
+   * @param types - The configuration for the tuple parser.
+   */
   public constructor(types: S) {
     super()
     this.setMeta({ type: 'array', items: types.map(getSchemaMeta) })

@@ -1,6 +1,9 @@
 import type { ParserFunction } from '../types'
 import Parser from '../parser'
 
+/**
+ * Parser for boolean values.
+ */
 export class BooleanParser extends Parser<boolean> {
   private fixed?: boolean
 
@@ -12,17 +15,28 @@ export class BooleanParser extends Parser<boolean> {
     }
   ]
 
+  /**
+   * Creates a new instance of BooleanParser.
+   */
   public constructor() {
     super()
     this.setMeta({ type: 'boolean' })
   }
 
+  /**
+   * Configures the parser to only accept true.
+   * @returns The current BooleanParser instance.
+   */
   public true() {
     this.setMeta({ type: { const: true } })
     this.fixed = true
     return this
   }
 
+  /**
+   * Configures the parser to only accept false.
+   * @returns The current BooleanParser instance.
+   */
   public false() {
     this.setMeta({ type: { const: false } })
     this.fixed = false

@@ -3,11 +3,19 @@ import Parser from '../../parser'
 import type { IonParserConfig, ParserFunction, ParserInfer } from '../../types'
 import { getSchemaMeta } from '../../utils/schema'
 
+/**
+ * Parser for union types.
+ * @template T - The union of parser types.
+ */
 export class UnionParser<T extends IonParserConfig> extends Parser<ParserInfer<T[number]>> {
   private values: T
 
   protected rules: ParserFunction[] = []
 
+  /**
+   * Creates a new instance of UnionParser.
+   * @param values - The parsers to union.
+   */
   public constructor(...values: T) {
     super()
     this.setMeta({ type: { mode: 'oneOf', items: values.map(getSchemaMeta) } })

@@ -3,11 +3,13 @@ import Parser from '../../parser'
 import type { ParserFunction } from '../../types'
 
 const AsyncFunction = Object.getPrototypeOf(async () => {}).constructor
-/* eslint-disable-next-line no-empty-function */
 const GeneratorFunction = Object.getPrototypeOf(function* Generator() {}).constructor
-/* eslint-disable-next-line no-empty-function */
 const AsyncGeneratorFunction = Object.getPrototypeOf(async function* AsyncGenerator() {}).constructor
 
+/**
+ * Parser for function values.
+ * @template T - The function type.
+ */
 export class FunctionParser<T extends (...args: unknown[]) => unknown> extends Parser<T> {
   private isAsync = false
 
@@ -43,31 +45,61 @@ export class FunctionParser<T extends (...args: unknown[]) => unknown> extends P
     }
   ]
 
+  /**
+   * Configures the parser to expect async functions.
+   * @param isAsync - Whether the function should be async. Defaults to true.
+   * @returns The current FunctionParser instance.
+   */
   public async(isAsync = true) {
     this.isAsync = isAsync
     return this
   }
 
+  /**
+   * Configures the parser to expect arrow functions.
+   * @param isArrow - Whether the function should be an arrow function. Defaults to true.
+   * @returns The current FunctionParser instance.
+   */
   public arrow(isArrow = true) {
     this.isArrow = isArrow
     return this
   }
 
+  /**
+   * Configures the parser to expect generator functions.
+   * @param isGenerator - Whether the function should be a generator. Defaults to true.
+   * @returns The current FunctionParser instance.
+   */
   public generator(isGenerator = true) {
     this.isGenerator = isGenerator
     return this
   }
 
+  /**
+   * Sets the expected number of arguments for the function.
+   * @param count - The number of arguments.
+   * @returns The current FunctionParser instance.
+   */
   public args(count: number) {
     this.argsCount = count
     return this
   }
 
+  /**
+   * Sets a parser for the function name.
+   * @param parser - The StringParser to use for the function name.
+   * @returns The current FunctionParser instance.
+   */
   public name(parser: StringParser) {
     this.nameParser = parser
     return this
   }
 
+  /**
+   * Configures the parser to expect constructor functions.
+   * @param isConstructor - Whether the function should be a constructor. Defaults to true.
+   * @returns The current FunctionParser instance.
+   */
   public constructed(isConstructor = true) {
     this.isConstructor = isConstructor
     return this

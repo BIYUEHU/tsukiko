@@ -3,7 +3,7 @@
  * @Blog: https://hotaru.icu
  * @Date: 2023-11-24 18:43:20
  * @LastEditors: Hotaru biyuehuya@gmail.com
- * @LastEditTime: 2024-07-23 20:58:57
+ * @LastEditTime: 2024-07-24 16:43:27
  */
 import 'reflect-metadata'
 import {
@@ -45,7 +45,9 @@ export * from './parsers'
 export * from './parser'
 export * from './utils/error'
 
-/* eslint-disable-next-line @typescript-eslint/no-namespace */
+/**
+ * All tsu Parsers
+ */
 export namespace Tsu {
   // biome-ignore lint:
   export const Number = numberFactory
@@ -76,6 +78,11 @@ export namespace Tsu {
   export type inferTuple<T extends TupleParserConfig> = TupleParserInfer<T>
 }
 
+/**
+ * Creates a factory for Tsu parsers with a specified language.
+ * @param lang - The language to use for the parsers. Defaults to DEFAULT_LANG.
+ * @returns An object containing factory methods for various Tsu parsers.
+ */
 export function tsuFactory(lang: langType = DEFAULT_LANG): typeof Tsu {
   return {
     Number() {

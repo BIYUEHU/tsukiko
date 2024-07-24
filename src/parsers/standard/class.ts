@@ -2,6 +2,10 @@ import type { StringParser } from '..'
 import Parser from '../../parser'
 import type { Constructor, ParserFunction } from '../../types'
 
+/**
+ * Parser for class constructors.
+ * @template T - The constructor type.
+ */
 export class ClassParser<T extends Constructor> extends Parser<T> {
   private argsCount?: number
 
@@ -28,11 +32,21 @@ export class ClassParser<T extends Constructor> extends Parser<T> {
     }
   ]
 
+  /**
+   * Sets the expected number of arguments for the constructor.
+   * @param count - The number of arguments.
+   * @returns The current ClassParser instance.
+   */
   public args(count: number) {
     this.argsCount = count
     return this
   }
 
+  /**
+   * Sets a parser for the class name.
+   * @param parser - The StringParser to use for the class name.
+   * @returns The current ClassParser instance.
+   */
   public name(parser: StringParser) {
     this.nameParser = parser
     return this

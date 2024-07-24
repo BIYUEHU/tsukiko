@@ -8,11 +8,19 @@ type IntersectionFromArray<T extends unknown[]> = T extends [infer F, ...infer R
   : // biome-ignore lint:
     {}
 
+/**
+ * Parser for intersection types.
+ * @template T - The intersection of parser types.
+ */
 export class IntersectionParser<T extends IonParserConfig> extends Parser<IntersectionFromArray<T>> {
   private values: T
 
   protected rules: ParserFunction[] = []
 
+  /**
+   * Creates a new instance of IntersectionParser.
+   * @param values - The parsers to intersect.
+   */
   public constructor(...values: T) {
     super()
     this.setMeta({ type: { mode: 'allOf', items: values.map(getSchemaMeta) } })

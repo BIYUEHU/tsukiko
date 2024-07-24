@@ -1,9 +1,17 @@
 import Parser from '../../parser'
 import type { ParserFunction } from '../../types'
 
+/**
+ * Parser for literal values.
+ * @template T - The literal type (string, number, or boolean).
+ */
 export class LiteralParser<T extends string | number | boolean> extends Parser<T> {
   protected rules: ParserFunction[] = []
 
+  /**
+   * Creates a new instance of LiteralParser.
+   * @param value - The literal value to parse.
+   */
   public constructor(value: T) {
     super()
     this.setMeta({ type: { const: value } })
