@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/biyuehu/tsukiko/compare/v1.4.0...v1.4.1) (2024-07-24)
+
+
+### Bug Fixes
+
+* type declaration ([3183970](https://github.com/biyuehu/tsukiko/commit/3183970c88aaea8e515b7bd2d8919b848deaa6e6))
+
+
+
 # [1.4.0](https://github.com/biyuehu/tsukiko/compare/v1.3.1...v1.4.0) (2024-07-24)
 
 
