@@ -118,7 +118,7 @@ export abstract class Parser<T> extends Lang implements ParserImpl<T> {
   public default(value: T) {
     if (getSchemaMeta(this).type) this.setMeta({ default: value as JSONSchema7Type })
     this.defaultValue = value
-    return this.optional()
+    return this.optional() as Parser<T>
   }
 
   /**
