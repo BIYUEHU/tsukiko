@@ -1,18 +1,33 @@
-import type { ParserFunction } from '../types';
-import Parser from '../parser';
+import type { ParserFunction } from '../types'
+import Parser from '../parser'
 
 export class BooleanParser extends Parser<boolean> {
-	protected rules: ParserFunction[] = [input => (typeof input === 'boolean' ? null : this.error('not_boolean'))];
+  private fixed?: boolean
 
-	public true() {
-		this.rules.push(input => (input === true ? null : this.error('not_true')));
-		return this;
-	}
+  protected rules: ParserFunction[] = [
+    (input) => {
+      if (typeof input !== 'boolean') return this.error('not_boolean')
+      if (this.fixed !== undefined && this.fixed !== input) return this.error(this.fixed ? 'not_true' : 'not_false')
+      return null
+    }
+  ]
 
-	public false() {
-		this.rules.push(input => (input === false ? null : this.error('not_false')));
-		return this;
-	}
+  public constructor() {
+    super()
+    this.setMeta({ type: 'boolean' })
+  }
+
+  public true() {
+    this.setMeta({ type: { const: true } })
+    this.fixed = true
+    return this
+  }
+
+  public false() {
+    this.setMeta({ type: { const: false } })
+    this.fixed = false
+    return this
+  }
 }
 
-export default BooleanParser;
+export default BooleanParser

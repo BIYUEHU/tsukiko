@@ -1,33 +1,35 @@
-import type { TupleParserInfer, ParserFunction, TupleParserConfig } from '../types';
-import { Parser } from '../parser';
-import TsuError from '../utils/error';
+import type { TupleParserInfer, ParserFunction, TupleParserConfig } from '../types'
+import { Parser } from '../parser'
+import TsuError from '../utils/error'
+import { getSchemaMeta } from '../utils/schema'
 
 export class TupleParser<S extends TupleParserConfig> extends Parser<TupleParserInfer<S>> {
-	protected rules: ParserFunction[] = [
-		input => {
-			if (!Array.isArray(input)) return this.error('not_a_tuple');
-			if (input.length !== this.elementsParser.length)
-				return this.error('illegal_tuple_length', { value: this.elementsParser.length, input: input.length });
-			let count = 0;
-			try {
-				input.forEach(element => {
-					this.elementsParser[count].parse(element);
-					count += 1;
-				});
-			} catch (error) {
-				if (!(error instanceof TsuError)) throw error;
-				return this.error('tuple_error', { length: count, value: error.message });
-			}
-			return null;
-		},
-	];
+  protected rules: ParserFunction[] = [
+    (input) => {
+      if (!Array.isArray(input)) return this.error('not_a_tuple')
+      if (input.length !== this.elementsParser.length)
+        return this.error('illegal_tuple_length', { value: this.elementsParser.length, input: input.length })
+      let count = 0
+      try {
+        for (const element of input) {
+          this.elementsParser[count].parse(element)
+          count += 1
+        }
+      } catch (error) {
+        if (!(error instanceof TsuError)) throw error
+        return this.error('tuple_error', { length: count, value: error.message })
+      }
+      return null
+    }
+  ]
 
-	private elementsParser: S;
+  private elementsParser: S
 
-	public constructor(types: S) {
-		super();
-		this.elementsParser = types;
-	}
+  public constructor(types: S) {
+    super()
+    this.setMeta({ type: 'array', items: types.map(getSchemaMeta) })
+    this.elementsParser = types
+  }
 }
 
-export default TupleParser;
+export default TupleParser

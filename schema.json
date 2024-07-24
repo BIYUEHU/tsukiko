@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "properties": {
+    "address": { "description": "server address", "type": "string" },
+    "mode": { "enum": ["mode1", "mode2"] },
+    "port": { "maximum": 65535, "minimum": 1, "type": "integer" }
+  },
+  "required": ["mode", "port", "address"],
+  "type": "object"
+}

@@ -1,33 +1,35 @@
-import { ObjectParser } from '../..';
-import Parser from '../../parser';
-import type { IonParserConfig, ParserFunction, ParserInfer } from '../../types';
+import { ObjectParser } from '../..'
+import Parser from '../../parser'
+import type { IonParserConfig, ParserFunction, ParserInfer } from '../../types'
+import { getSchemaMeta } from '../../utils/schema'
 
-/* eslint-disable @typescript-eslint/ban-types */
 type IntersectionFromArray<T extends unknown[]> = T extends [infer F, ...infer R]
   ? ParserInfer<F> & IntersectionFromArray<R>
-  : {};
+  : // biome-ignore lint:
+    {}
 
 export class IntersectionParser<T extends IonParserConfig> extends Parser<IntersectionFromArray<T>> {
-  private values: T;
+  private values: T
 
-  protected rules: ParserFunction[] = [];
+  protected rules: ParserFunction[] = []
 
   public constructor(...values: T) {
-    super();
-    this.values = values;
+    super()
+    this.setMeta({ type: { mode: 'allOf', items: values.map(getSchemaMeta) } })
+    this.values = values
     this.rules.push((input) => {
-      if (values.filter((parser) => parser.check(input)).length === values.length) return null;
-      throw this.error('intersection_error');
-    });
+      if (values.filter((parser) => parser.check(input)).length === values.length) return null
+      throw this.error('intersection_error')
+    })
   }
 
   protected defaultHandle(input: IntersectionFromArray<T>) {
-    if (!(this.values[0] instanceof ObjectParser && this.values[1] instanceof ObjectParser)) return input;
+    if (!(this.values[0] instanceof ObjectParser && this.values[1] instanceof ObjectParser)) return input
     return Object.assign(
       this.values[0].strict(false).parse(input),
       this.values[1].strict(false).parse(input)
-    ) as IntersectionFromArray<T>;
+    ) as IntersectionFromArray<T>
   }
 }
 
-export default IntersectionParser;
+export default IntersectionParser

@@ -7,6 +7,8 @@ export default {
   illegal_match_string: '目標 string 「%input%」 不符合規則 %value%',
   illegal_starts_with: '目標 string 「%input%」 開頭字符不與 %value% 匹配',
   illegal_ends_with: '目標 string 「%input%」 末尾字符不與 %value% 匹配',
+  too_long: '目標 string 「%input%」 過長，應 <= %value%',
+  too_short: '目標 string 「%input%」 過短，應 >= %value%',
   /* number */
   not_number: '目標不是 number 類型',
   not_integer_number: '目標 number 「%input%」 不是一個整數',
@@ -21,6 +23,7 @@ export default {
   too_smaller: '目標 number 「%input%」 過小，應 > %value%',
   too_smaller_has: '目標 number 「%input%」 過小，應 >= %value%',
   is_a_NaN: '目標 number 是一個 NaN',
+  not_multiple_number: '目標 number 「%input%」 不是 %value% 的倍數',
   /* boolean */
   not_boolean: '目標不是 boolean 類型',
   not_true: '目標不是 true 類型',
@@ -33,6 +36,8 @@ export default {
   /* stacks - array */
   not_an_array: '目標不是一個 array 類型',
   array_error: '目標 array 在 %length% 處發生錯誤：%value%',
+  too_many_items: '目標 array 過多，應 <= %value%，而不是 %input%',
+  too_few_items: '目標 array 過少，應 >= %value%，而不是 %input%',
   /* stacks - tuple */
   not_a_tuple: '目標不是一個 tuple 類型',
   illegal_tuple_length: '目標 tuple 的長度應是 %value%，而不是 %input%',
@@ -42,7 +47,8 @@ export default {
   object_is_null: '目標 object 是 null 類型',
   object_is_an_array: '目標 object 是一個 array 類型',
   object_not_instance_of_constructor: '目標 object 不是實例',
-  object_keys_too_many: '嚴格模式：目標 object 鍵值數過多，應是 %value% 以內 而不是 %input%',
+  object_keys_too_many: '目標 object 鍵值數過多，應是 %value% 以內 而不是 %input%',
+  object_keys_too_few: '目標 object 鍵值數過少，應是 %value% 以內 而不是 %input%',
   object_error: '目標 object 在 %key% 處發生錯誤：%value%',
   object_key_error: '目標 object 鍵類型錯誤',
   /* advance - intersection */
@@ -53,6 +59,7 @@ export default {
   literal_only: '字面量類型僅允許 string 與 number',
   literal_number_error: '目標 number 不能賦給 %value%',
   literal_string_error: '目標 string 不能賦給 %value%',
+  literal_boolean_error: '目標 boolean 不能賦給 %value%',
   /* advance - custom */
   custom_error: '無法通過自定義規則： %value%',
   /* standard - function */
@@ -69,4 +76,4 @@ export default {
   class_args_count_mismatch: '目標 class 建構參數數目不符合規則，應為 %expected%，而不是 %actual%',
   class_name_mismatch: '目標 class 名稱不符合規則：%value%',
   class_prototype_error: '目標 class 沒有繼承指定 Constructor'
-};
+}

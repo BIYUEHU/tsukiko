@@ -7,6 +7,8 @@ export default {
   illegal_match_string: 'Target string "%input%" does not match the pattern %value%',
   illegal_starts_with: 'Target string "%input%" does not start with %value%',
   illegal_ends_with: 'Target string "%input%" does not end with %value%',
+  too_long: 'Target string "%input%" is too long, should be <= %value%',
+  too_short: 'Target string "%input%" is too short, should be >= %value%',
   /* number */
   not_number: 'Target is not a number',
   not_integer_number: 'Target number "%input%" is not an integer',
@@ -20,6 +22,7 @@ export default {
   too_bigger_has: 'Target number "%input%" is too big, should be <= %value%',
   too_smaller: 'Target number "%input%" is too small, should be > %value%',
   too_smaller_has: 'Target number "%input%" is too small, should be >= %value%',
+  not_multiple_number: 'Target number "%input%" is not a multiple of %value%',
   is_a_NaN: 'Target number is a NaN',
   /* boolean */
   not_boolean: 'Target is not a boolean',
@@ -33,6 +36,8 @@ export default {
   /* stacks - array */
   not_an_array: 'Target is not an array',
   array_error: 'Target array error at %length%: %value%',
+  too_many_items: 'Too many items for target array, should be %value% or less, not %input%',
+  too_few_items: 'Too few items for target array, should be %value% or more, not %input%',
   /* stacks - tuple */
   not_a_tuple: 'Target is not a tuple',
   illegal_tuple_length: 'Target tuple length should be %value%, not %input%',
@@ -42,7 +47,8 @@ export default {
   object_is_null: 'Target object is null',
   object_is_an_array: 'Target object is an array',
   object_not_instance_of_constructor: 'Target object is not an instance of constructor',
-  object_keys_too_many: 'Strict mode: too many keys for target object, should be %value% or less, not %input%',
+  object_keys_too_many: 'Too many keys for target object, should be %value% or less, not %input%',
+  object_keys_too_few: 'Too few keys for target object, should be %value% or more, not %input%',
   object_error: 'Target object error at %key%: %value%',
   object_key_error: 'Target object key type error',
   /* advance - intersection */
@@ -53,6 +59,7 @@ export default {
   literal_only: 'Literal types allow only strings and numbers',
   literal_number_error: 'Target number cannot assign to %value%',
   literal_string_error: 'Target string cannot assign to %value%',
+  literal_boolean_error: 'Target boolean cannot assign to %value%',
   /* advance - custom */
   custom_error: 'Cannot pass custom validation: %value%',
   /* standard - function */
@@ -69,4 +76,4 @@ export default {
   class_args_count_mismatch: 'Target class constructor arguments count mismatch, expected %expected%, got %actual%',
   class_name_mismatch: 'Target class name mismatch: %value%',
   class_prototype_error: 'Target class does not inherit specified Constructor'
-};
+}
