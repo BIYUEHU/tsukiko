@@ -1,3 +1,4 @@
+<!-- markdown-lint-disable -->
 <div align="center">
 
 # Tsukiko
@@ -39,28 +40,75 @@ pnpm install tsukiko
 
 ## 🚀 Parser
 
-- NumberParser
-- StringParser
-- BooleanParser
-- NullParser
-- UndefinedParser
-- AnyParser
-- UnknownParser
-- NeverParser
-- ArrayParser
-- TupleParser
-- ObjectParser
-- EnumParser
-- LiteralParser
-- IntersectionParser
-- UnionParser
-- CustomParser
+- `NumberParser`
+- `StringParser`
+- `BooleanParser`
+- `NullParser`
+- `UndefinedParser`
+- `AnyParser`
+- `UnknownParser`
+- `NeverParser`
+- `ArrayParser`
+- `TupleParser`
+- `ObjectParser`
+- `EnumParser`
+- `LiteralParser`
+- `IntersectionParser`
+- `UnionParser`
+- `CustomParser`
+- `FunctionParser`
+- `ClassParser`
 
 ## 🛠️ Tools
 
 - ParserInfer
 - tsuFactory
 - TsuError
+
+## 📝 Json-Schema
+
+All parsers' methods which are supported list:
+
+- `NumberParser`
+  - `int()`
+  - `multiple()`
+  - `natural()`
+  - `positive()`
+  - `negative()`
+  - `percent()`
+  - `port()`
+- `StringParser`
+  - `regexp()`
+  - `email()`
+  - `domain()`
+  - `url()`
+  - `max()`
+  - `min()`
+  - `range()`
+- `BooleanParser`
+  - Fully support
+- `NullParser`
+  - Fully support
+- `ArrayParser`
+  - Fully support
+- `TupleParser`
+  - Fully support
+- `ObjectParser`
+  - `strict()`
+  - `index()`
+  - `max()`
+  - `min()`
+  - `range()`
+- `EnumParser`
+  - Only support literal values (string, number, boolean constants)
+- `LiteralParser`
+  - Fully support
+- `IntersectionParser`
+  - Fully support
+- `UnionParser`
+  - Fully support
+
+The parsers and methods which no listed are all not supported.
 
 ## 🌰 Example
 
