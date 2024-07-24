@@ -30,7 +30,7 @@ Creates a new instance of NumberParser.
 
 #### Defined in
 
-[src/parsers/number.ts:73](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L73)
+[src/parsers/number.ts:73](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L73)
 
 ## Properties
 
@@ -44,7 +44,7 @@ Creates a new instance of NumberParser.
 
 #### Defined in
 
-[src/parser.ts:49](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L49)
+[src/parser.ts:49](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L49)
 
 ***
 
@@ -58,7 +58,7 @@ Creates a new instance of NumberParser.
 
 #### Defined in
 
-[src/parser.ts:44](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L44)
+[src/parser.ts:44](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L44)
 
 ***
 
@@ -72,7 +72,7 @@ Creates a new instance of NumberParser.
 
 #### Defined in
 
-[src/utils/lang.ts:6](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/utils/lang.ts#L6)
+[src/utils/lang.ts:6](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/utils/lang.ts#L6)
 
 ***
 
@@ -86,7 +86,7 @@ Creates a new instance of NumberParser.
 
 #### Defined in
 
-[src/parsers/number.ts:44](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L44)
+[src/parsers/number.ts:44](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L44)
 
 ## Methods
 
@@ -114,13 +114,13 @@ True if the input is valid, false otherwise.
 
 #### Defined in
 
-[src/parser.ts:99](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L99)
+[src/parser.ts:99](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L99)
 
 ***
 
 ### default()
 
-> **default**(`value`): [`Parser`](Parser.md)\<`undefined` \| `number`\>
+> **default**(`value`): [`Parser`](Parser.md)\<`number`\>
 
 Sets a default value for the parser.
 
@@ -132,7 +132,7 @@ The default value.
 
 #### Returns
 
-[`Parser`](Parser.md)\<`undefined` \| `number`\>
+[`Parser`](Parser.md)\<`number`\>
 
 The current Parser instance.
 
@@ -142,7 +142,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:118](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L118)
+[src/parser.ts:118](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L118)
 
 ***
 
@@ -164,7 +164,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:34](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L34)
+[src/parser.ts:34](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L34)
 
 ***
 
@@ -192,7 +192,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:138](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L138)
+[src/parser.ts:138](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L138)
 
 ***
 
@@ -214,7 +214,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:128](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L128)
+[src/parser.ts:128](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L128)
 
 ***
 
@@ -238,7 +238,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:39](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L39)
+[src/parser.ts:39](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L39)
 
 ***
 
@@ -256,7 +256,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:139](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L139)
+[src/parsers/number.ts:139](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L139)
 
 ***
 
@@ -274,7 +274,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:120](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L120)
+[src/parsers/number.ts:120](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L120)
 
 ***
 
@@ -296,7 +296,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/utils/lang.ts:8](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/utils/lang.ts#L8)
+[src/utils/lang.ts:8](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/utils/lang.ts#L8)
 
 ***
 
@@ -324,7 +324,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:84](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L84)
+[src/parsers/number.ts:84](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L84)
 
 ***
 
@@ -352,7 +352,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:97](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L97)
+[src/parsers/number.ts:97](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L97)
 
 ***
 
@@ -376,7 +376,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:149](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L149)
+[src/parsers/number.ts:149](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L149)
 
 ***
 
@@ -394,7 +394,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:159](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L159)
+[src/parsers/number.ts:159](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L159)
 
 ***
 
@@ -412,7 +412,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:176](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L176)
+[src/parsers/number.ts:176](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L176)
 
 ***
 
@@ -430,7 +430,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:130](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L130)
+[src/parsers/number.ts:130](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L130)
 
 ***
 
@@ -452,7 +452,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:107](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L107)
+[src/parser.ts:107](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L107)
 
 ***
 
@@ -484,7 +484,7 @@ If parsing fails.
 
 #### Defined in
 
-[src/parser.ts:61](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L61)
+[src/parser.ts:61](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L61)
 
 ***
 
@@ -512,7 +512,7 @@ A promise that resolves with the parsed result or rejects with an error.
 
 #### Defined in
 
-[src/parser.ts:86](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L86)
+[src/parser.ts:86](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L86)
 
 ***
 
@@ -540,7 +540,7 @@ An object containing the parsing result or error.
 
 #### Defined in
 
-[src/parser.ts:72](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L72)
+[src/parser.ts:72](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L72)
 
 ***
 
@@ -558,7 +558,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:184](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L184)
+[src/parsers/number.ts:184](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L184)
 
 ***
 
@@ -576,7 +576,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:192](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L192)
+[src/parsers/number.ts:192](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L192)
 
 ***
 
@@ -594,7 +594,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:168](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L168)
+[src/parsers/number.ts:168](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L168)
 
 ***
 
@@ -630,7 +630,7 @@ The current NumberParser instance.
 
 #### Defined in
 
-[src/parsers/number.ts:112](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/number.ts#L112)
+[src/parsers/number.ts:112](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/number.ts#L112)
 
 ***
 
@@ -658,7 +658,7 @@ The generated JSON schema.
 
 #### Defined in
 
-[src/parser.ts:158](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L158)
+[src/parser.ts:158](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L158)
 
 ***
 
@@ -680,7 +680,7 @@ The generated JSON schema.
 
 #### Defined in
 
-[src/parser.ts:51](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L51)
+[src/parser.ts:51](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L51)
 
 ***
 
@@ -708,4 +708,4 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:148](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L148)
+[src/parser.ts:148](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L148)

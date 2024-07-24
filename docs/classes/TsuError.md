@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/utils/error.ts:18](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/utils/error.ts#L18)
+[src/utils/error.ts:18](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/utils/error.ts#L18)
 
 ## Properties
 

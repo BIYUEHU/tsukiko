@@ -1,6 +1,6 @@
 {
   "name": "tsukiko",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Dynamic Types Cheker At Runtime Which Develop",
   "main": "dist/index.js",
   "scripts": {

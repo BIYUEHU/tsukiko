@@ -1,3 +1,12 @@
+## [1.4.2](https://github.com/biyuehu/tsukiko/compare/v1.4.1...v1.4.2) (2024-07-24)
+
+
+### Bug Fixes
+
+* parser.default() return type ([aa7a414](https://github.com/biyuehu/tsukiko/commit/aa7a414bb89555b3910dd9d229f505891bded4ee))
+
+
+
 ## [1.4.1](https://github.com/biyuehu/tsukiko/compare/v1.4.0...v1.4.1) (2024-07-24)
 
 

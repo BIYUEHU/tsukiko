@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[src/types.ts:71](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L71)
+[src/types.ts:71](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L71)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[src/types.ts:54](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L54)
+[src/types.ts:54](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L54)
 
 ***
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[src/types.ts:55](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L55)
+[src/types.ts:55](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L55)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[src/types.ts:62](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L62)
+[src/types.ts:62](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L62)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[src/types.ts:64](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L64)
+[src/types.ts:64](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L64)
 
 ***
 
@@ -64,7 +64,7 @@
 
 #### Defined in
 
-[src/types.ts:67](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L67)
+[src/types.ts:67](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L67)
 
 ***
 
@@ -74,7 +74,7 @@
 
 #### Defined in
 
-[src/types.ts:68](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L68)
+[src/types.ts:68](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L68)
 
 ***
 
@@ -84,7 +84,7 @@
 
 #### Defined in
 
-[src/types.ts:58](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L58)
+[src/types.ts:58](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L58)
 
 ***
 
@@ -94,7 +94,7 @@
 
 #### Defined in
 
-[src/types.ts:72](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L72)
+[src/types.ts:72](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L72)
 
 ***
 
@@ -104,7 +104,7 @@
 
 #### Defined in
 
-[src/types.ts:61](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L61)
+[src/types.ts:61](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L61)
 
 ***
 
@@ -114,7 +114,7 @@
 
 #### Defined in
 
-[src/types.ts:69](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L69)
+[src/types.ts:69](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L69)
 
 ***
 
@@ -124,7 +124,7 @@
 
 #### Defined in
 
-[src/types.ts:59](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L59)
+[src/types.ts:59](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L59)
 
 ***
 
@@ -134,7 +134,7 @@
 
 #### Defined in
 
-[src/types.ts:73](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L73)
+[src/types.ts:73](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L73)
 
 ***
 
@@ -144,7 +144,7 @@
 
 #### Defined in
 
-[src/types.ts:63](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L63)
+[src/types.ts:63](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L63)
 
 ***
 
@@ -154,7 +154,7 @@
 
 #### Defined in
 
-[src/types.ts:65](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L65)
+[src/types.ts:65](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L65)
 
 ***
 
@@ -164,7 +164,7 @@
 
 #### Defined in
 
-[src/types.ts:52](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L52)
+[src/types.ts:52](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L52)
 
 ***
 
@@ -174,7 +174,7 @@
 
 #### Defined in
 
-[src/types.ts:57](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L57)
+[src/types.ts:57](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L57)
 
 ***
 
@@ -184,7 +184,7 @@
 
 #### Defined in
 
-[src/types.ts:53](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L53)
+[src/types.ts:53](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L53)
 
 ***
 
@@ -194,4 +194,4 @@
 
 #### Defined in
 
-[src/types.ts:51](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/types.ts#L51)
+[src/types.ts:51](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/types.ts#L51)

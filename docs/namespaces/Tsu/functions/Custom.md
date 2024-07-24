@@ -22,4 +22,4 @@
 
 ## Defined in
 
-[src/index.ts:72](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/index.ts#L72)
+[src/index.ts:72](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/index.ts#L72)

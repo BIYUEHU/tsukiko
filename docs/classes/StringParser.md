@@ -30,7 +30,7 @@ Creates a new instance of StringParser.
 
 #### Defined in
 
-[src/parsers/string.ts:54](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L54)
+[src/parsers/string.ts:54](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L54)
 
 ## Properties
 
@@ -44,7 +44,7 @@ Creates a new instance of StringParser.
 
 #### Defined in
 
-[src/parser.ts:49](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L49)
+[src/parser.ts:49](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L49)
 
 ***
 
@@ -58,7 +58,7 @@ Creates a new instance of StringParser.
 
 #### Defined in
 
-[src/parser.ts:44](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L44)
+[src/parser.ts:44](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L44)
 
 ***
 
@@ -72,7 +72,7 @@ Creates a new instance of StringParser.
 
 #### Defined in
 
-[src/utils/lang.ts:6](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/utils/lang.ts#L6)
+[src/utils/lang.ts:6](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/utils/lang.ts#L6)
 
 ***
 
@@ -86,7 +86,7 @@ Creates a new instance of StringParser.
 
 #### Defined in
 
-[src/parsers/string.ts:30](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L30)
+[src/parsers/string.ts:30](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L30)
 
 ## Methods
 
@@ -114,13 +114,13 @@ True if the input is valid, false otherwise.
 
 #### Defined in
 
-[src/parser.ts:99](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L99)
+[src/parser.ts:99](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L99)
 
 ***
 
 ### default()
 
-> **default**(`value`): [`Parser`](Parser.md)\<`undefined` \| `string`\>
+> **default**(`value`): [`Parser`](Parser.md)\<`string`\>
 
 Sets a default value for the parser.
 
@@ -132,7 +132,7 @@ The default value.
 
 #### Returns
 
-[`Parser`](Parser.md)\<`undefined` \| `string`\>
+[`Parser`](Parser.md)\<`string`\>
 
 The current Parser instance.
 
@@ -142,7 +142,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:118](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L118)
+[src/parser.ts:118](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L118)
 
 ***
 
@@ -164,7 +164,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parsers/string.ts:24](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L24)
+[src/parsers/string.ts:24](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L24)
 
 ***
 
@@ -192,7 +192,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:138](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L138)
+[src/parser.ts:138](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L138)
 
 ***
 
@@ -210,7 +210,7 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/parsers/string.ts:83](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L83)
+[src/parsers/string.ts:83](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L83)
 
 ***
 
@@ -228,7 +228,7 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/parsers/string.ts:74](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L74)
+[src/parsers/string.ts:74](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L74)
 
 ***
 
@@ -250,7 +250,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:128](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L128)
+[src/parser.ts:128](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L128)
 
 ***
 
@@ -274,7 +274,7 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/parsers/string.ts:112](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L112)
+[src/parsers/string.ts:112](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L112)
 
 ***
 
@@ -298,7 +298,7 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/parser.ts:39](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L39)
+[src/parser.ts:39](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L39)
 
 ***
 
@@ -320,7 +320,7 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/utils/lang.ts:8](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/utils/lang.ts#L8)
+[src/utils/lang.ts:8](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/utils/lang.ts#L8)
 
 ***
 
@@ -344,7 +344,7 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/parsers/string.ts:122](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L122)
+[src/parsers/string.ts:122](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L122)
 
 ***
 
@@ -368,7 +368,7 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/parsers/string.ts:133](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L133)
+[src/parsers/string.ts:133](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L133)
 
 ***
 
@@ -390,7 +390,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:107](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L107)
+[src/parser.ts:107](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L107)
 
 ***
 
@@ -422,7 +422,7 @@ If parsing fails.
 
 #### Defined in
 
-[src/parser.ts:61](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L61)
+[src/parser.ts:61](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L61)
 
 ***
 
@@ -450,7 +450,7 @@ A promise that resolves with the parsed result or rejects with an error.
 
 #### Defined in
 
-[src/parser.ts:86](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L86)
+[src/parser.ts:86](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L86)
 
 ***
 
@@ -478,7 +478,7 @@ An object containing the parsing result or error.
 
 #### Defined in
 
-[src/parser.ts:72](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L72)
+[src/parser.ts:72](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L72)
 
 ***
 
@@ -502,7 +502,7 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/parsers/string.ts:64](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L64)
+[src/parsers/string.ts:64](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L64)
 
 ***
 
@@ -530,7 +530,7 @@ The generated JSON schema.
 
 #### Defined in
 
-[src/parser.ts:158](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L158)
+[src/parser.ts:158](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L158)
 
 ***
 
@@ -552,7 +552,7 @@ The generated JSON schema.
 
 #### Defined in
 
-[src/parser.ts:51](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L51)
+[src/parser.ts:51](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L51)
 
 ***
 
@@ -576,7 +576,7 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/parsers/string.ts:102](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L102)
+[src/parsers/string.ts:102](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L102)
 
 ***
 
@@ -600,7 +600,7 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/parsers/string.ts:144](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L144)
+[src/parsers/string.ts:144](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L144)
 
 ***
 
@@ -628,7 +628,7 @@ The current Parser instance.
 
 #### Defined in
 
-[src/parser.ts:148](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parser.ts#L148)
+[src/parser.ts:148](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parser.ts#L148)
 
 ***
 
@@ -646,4 +646,4 @@ The current StringParser instance.
 
 #### Defined in
 
-[src/parsers/string.ts:92](https://github.com/BIYUEHU/tsukiko/blob/eb4b04a16e9c40909bed9d6503bd49914851f300/src/parsers/string.ts#L92)
+[src/parsers/string.ts:92](https://github.com/BIYUEHU/tsukiko/blob/aa7a414bb89555b3910dd9d229f505891bded4ee/src/parsers/string.ts#L92)
