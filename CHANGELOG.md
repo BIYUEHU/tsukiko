@@ -1,3 +1,12 @@
+# [1.4.0](https://github.com/biyuehu/tsukiko/compare/v1.3.1...v1.4.0) (2024-07-24)
+
+
+### Features
+
+* parser.schema,title,describe, array and object items range, number multipleOf ([eb4b04a](https://github.com/biyuehu/tsukiko/commit/eb4b04a16e9c40909bed9d6503bd49914851f300))
+
+
+
 ## [1.3.1](https://github.com/biyuehu/tsukiko/compare/v1.3.0...v1.3.1) (2024-06-11)
 
 
